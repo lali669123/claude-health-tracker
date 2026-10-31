@@ -1,0 +1,26 @@
+{
+  "nutrition_targets": {
+    "daily_calories": null,
+    "daily_protein_g": null,
+    "protein_target_basis": "1.6_2.2g_per_kg",
+    "notes": "先记录 1-2 周，再根据体重变化设定"
+  },
+  "weight_goals": {
+    "target_weight_kg": null,
+    "target_rate_kg_per_week": 0.3,
+    "max_safe_deficit_kcal": 500,
+    "min_intake_kcal": 1500
+  },
+  "training_goals": {
+    "frequency_per_week": 3,
+    "progression_method": "progressive_overload"
+  },
+  "sleep_goals": {
+    "target_night_hours": 7.5,
+    "target_total_hours": 8.0
+  },
+  "activity_goals": {
+    "daily_steps_min": 8000,
+    "daily_steps_target": 10000
+  }
+}

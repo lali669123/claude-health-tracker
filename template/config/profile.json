@@ -1,0 +1,31 @@
+{
+  "personal_info": {
+    "name": "",
+    "birth_date": "YYYY-MM-DD",
+    "gender": "male",
+    "height_cm": 175
+  },
+  "health_baseline": {
+    "initial_weight_kg": null,
+    "initial_weight_date": null,
+    "current_weight_kg": null,
+    "current_weight_date": null
+  },
+  "goals": {
+    "primary": "fat_loss_muscle_gain",
+    "target_weight_kg": null
+  },
+  "training": {
+    "frequency_per_week": 3,
+    "current_program": ""
+  },
+  "wearable": {
+    "device": "",
+    "app": ""
+  },
+  "dietary": {
+    "dining_method": "",
+    "allergies": [],
+    "restrictions": []
+  }
+}
