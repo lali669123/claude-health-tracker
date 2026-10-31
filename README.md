@@ -14,6 +14,33 @@
 
 ---
 
+## 一键部署
+
+把下面这段话复制给 **Claude Code** 或 **Codex**，它会自动下载整套方案、建好你的个人档案，然后告诉你怎么开始：
+
+```text
+请按照 https://github.com/lali669123/claude-health-tracker/blob/main/SETUP.md 里的步骤，帮我安装并配置这套健康记录方案。
+```
+
+还没有 AI 助手？先装一个：[Claude Code](https://code.claude.com/docs/en/setup) · [Codex](https://github.com/openai/codex)
+
+<details>
+<summary>手动安装</summary>
+
+```bash
+git clone https://github.com/lali669123/claude-health-tracker.git
+cd claude-health-tracker
+cp -r template data        # Windows PowerShell: Copy-Item -Recurse template data
+```
+
+填写 `data/config/profile.json` 和 `goals.json`，然后在这个文件夹里运行 `claude` 或 `codex`。
+
+</details>
+
+两个工具读同一套规则（`AGENTS.md`）和同一套技能，记录的数据也是同一份，可以混用。
+
+---
+
 ## 为什么用 AI 做健康管理
 
 多数人并不缺健康知识，缺的是**持续、准确、能对上号的数据**，和一个肯每天帮你看这些数据的人。
@@ -56,42 +83,6 @@ AI 助手能补上这三块：
 
 ---
 
-## 部署
-
-### 1. 安装 AI 助手（二选一，或两个都装）
-
-| | Claude Code | Codex |
-|---|---|---|
-| 官方文档 | [code.claude.com/docs](https://code.claude.com/docs/en/setup) | [github.com/openai/codex](https://github.com/openai/codex) |
-| macOS / Linux | `curl -fsSL https://claude.ai/install.sh \| bash` | `curl -fsSL https://chatgpt.com/codex/install.sh \| sh` |
-| Windows PowerShell | `irm https://claude.ai/install.ps1 \| iex` | `powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 \| iex"` |
-| npm | `npm install -g @anthropic-ai/claude-code` | `npm install -g @openai/codex` |
-| 账号 | Claude Pro / Max 等付费计划，或 API | ChatGPT Plus / Pro 等计划，或 API |
-| 图形界面 | [Claude 桌面应用](https://claude.com/download) | ChatGPT 桌面应用 / IDE 插件 |
-
-### 2. 获取项目并初始化数据
-
-```bash
-git clone https://github.com/lali669123/claude-health-tracker.git
-cd claude-health-tracker
-cp -r template data
-```
-
-Windows PowerShell 用 `Copy-Item -Recurse template data`。
-
-然后填写 `data/config/profile.json`（身高、出生日期、性别）和 `data/config/goals.json`（目标）。
-
-### 3. 启动
-
-```bash
-claude   # Claude Code
-codex    # Codex
-```
-
-两个工具读同一套规则（`AGENTS.md`）和同一套技能，记录的数据也是同一份，可以混用。
-
----
-
 ## 日常使用
 
 直接说话即可，不需要记命令：
@@ -128,6 +119,7 @@ codex    # Codex
 ## 文件结构
 
 ```
+SETUP.md               写给 AI 助手的安装步骤
 AGENTS.md              共享规则（Codex 直接读，Claude Code 通过 CLAUDE.md 导入）
 CLAUDE.md              一行 @AGENTS.md 导入
 .agents/skills/        技能（Codex 读这里，改技能只改这里）

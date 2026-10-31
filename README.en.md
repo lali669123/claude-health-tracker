@@ -16,6 +16,33 @@ Turn an AI coding agent into your personal health logger. Say a sentence or send
 
 ---
 
+## One-step setup
+
+Copy this line into **Claude Code** or **Codex**. It downloads the whole kit, sets up your profile, and tells you how to start:
+
+```text
+Please follow the steps in https://github.com/lali669123/claude-health-tracker/blob/main/SETUP.md to install and configure this health tracker for me.
+```
+
+No agent yet? Install one first: [Claude Code](https://code.claude.com/docs/en/setup) · [Codex](https://github.com/openai/codex)
+
+<details>
+<summary>Manual install</summary>
+
+```bash
+git clone https://github.com/lali669123/claude-health-tracker.git
+cd claude-health-tracker
+cp -r template data        # Windows PowerShell: Copy-Item -Recurse template data
+```
+
+Fill in `data/config/profile.json` and `goals.json`, then run `claude` or `codex` in that folder.
+
+</details>
+
+Both agents read the same rules (`AGENTS.md`), the same skills and the same data, so you can switch between them.
+
+---
+
 ## Why use AI for health management
 
 Most people don't lack health knowledge. What they lack is **consistent, accurate, connected data**, and someone willing to look at it every day.
@@ -58,42 +85,6 @@ These are **not implemented yet**. The structure is built to grow this way, and 
 
 ---
 
-## Setup
-
-### 1. Install an agent (either one, or both)
-
-| | Claude Code | Codex |
-|---|---|---|
-| Docs | [code.claude.com/docs](https://code.claude.com/docs/en/setup) | [github.com/openai/codex](https://github.com/openai/codex) |
-| macOS / Linux | `curl -fsSL https://claude.ai/install.sh \| bash` | `curl -fsSL https://chatgpt.com/codex/install.sh \| sh` |
-| Windows PowerShell | `irm https://claude.ai/install.ps1 \| iex` | `powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 \| iex"` |
-| npm | `npm install -g @anthropic-ai/claude-code` | `npm install -g @openai/codex` |
-| Account | Claude Pro / Max or API | ChatGPT Plus / Pro or API |
-| GUI | [Claude desktop app](https://claude.com/download) | ChatGPT desktop app / IDE extension |
-
-### 2. Clone and initialize your data
-
-```bash
-git clone https://github.com/lali669123/claude-health-tracker.git
-cd claude-health-tracker
-cp -r template data
-```
-
-On Windows PowerShell use `Copy-Item -Recurse template data`.
-
-Fill in `data/config/profile.json` (height, birth date, sex) and `data/config/goals.json`.
-
-### 3. Start
-
-```bash
-claude   # Claude Code
-codex    # Codex
-```
-
-Both agents read the same rules (`AGENTS.md`), the same skills and the same data, so you can switch between them.
-
----
-
 ## Daily use
 
 Just talk to it:
@@ -130,6 +121,7 @@ The nightly check covers today and the two days before, fills in any day that ha
 ## Layout
 
 ```
+SETUP.md               install steps for the agent
 AGENTS.md              shared rules (Codex reads it; Claude Code imports it via CLAUDE.md)
 CLAUDE.md              one line: @AGENTS.md
 .agents/skills/        skills for Codex (edit skills here)
